@@ -1,5 +1,5 @@
 /.idea/
 /oc.iml
-/pre-commit-hook.bat
 /Ohmyfood/Maquettes Ohmyfood/
+*.bat
 *.php
