@@ -1,6 +1,5 @@
-/oc.iml
 /.idea/
-/Ohmyfood/Maquettes Ohmyfood/
-/Ohmyfood/index.php
-/compile-html.php
+/oc.iml
 /pre-commit-hook.bat
+/Ohmyfood/Maquettes Ohmyfood/
+*.php
