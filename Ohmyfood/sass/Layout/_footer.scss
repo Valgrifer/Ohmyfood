@@ -1,0 +1,28 @@
+footer {
+  padding: 1.25rem;
+
+  background: $gray-4;
+  color: white;
+
+  &>* {
+    margin: 0 0 1.25rem;
+    padding: 0;
+  }
+
+  & svg {
+    height: 1rem;
+  }
+
+  & ul {
+    list-style: none;
+
+    & li {
+      margin-bottom: 0.5rem;
+
+      & svg {
+        width: 1rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

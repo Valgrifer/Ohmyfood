@@ -1,46 +1,249 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+/**
+ * Color
+ */
+.btn {
+  height: 3.125rem;
+  padding: 0 1.375rem;
+  color: white;
+  border: none;
+  border-radius: 1.5625rem;
+  background-image: linear-gradient(175deg, #FF79DA 0%, #9356DC 100%);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 5px 10px 0;
+  cursor: pointer;
+}
+.btn:hover {
+  background-image: linear-gradient(175deg, #ff93e1 0%, #a16be0 100%);
+  box-shadow: rgba(0, 0, 0, 0.5) 0 5px 10px 0;
+}
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: inset rgba(0, 0, 0, 0.25) 0 5px 10px 0;
+}
+
+.card {
+  height: 16rem;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 10px 0;
+  text-decoration: none;
+  color: black;
+}
+.card * {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+}
+.card .card-img {
+  position: relative;
+  z-index: 1;
+  height: calc(100% - 4.75rem);
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  object-fit: cover;
+}
+.card .card-content {
+  height: 4.75rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.card .card-content .card-text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.25rem 0 1.25rem 1rem;
+}
+.card.new::after {
+  position: absolute;
+  content: "Nouveau";
+  z-index: 5;
+  width: fit-content;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #99E2D0;
+  color: #2c9c81;
+  border-radius: 0.125rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 2px 5px 1px;
+  line-height: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
+.like {
+  width: 100px;
+  height: 100px;
+  background-color: #8cffa0;
+  -webkit-mask-image: url(https://mdn.mozillademos.org/files/12676/star.svg);
+  mask-image: url(https://mdn.mozillademos.org/files/12676/star.svg);
 }
 
-body {
-  line-height: 1;
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
 }
 
-ol, ul {
+header {
+  position: relative;
+  z-index: 1000;
+  height: 4rem;
+  width: 100%;
+  padding: 1.375rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.75) 0 -10px 20px 0;
+}
+header svg {
+  height: 1.875rem;
+}
+
+footer {
+  padding: 1.25rem;
+  background: #353535;
+  color: white;
+}
+footer > * {
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+footer svg {
+  height: 1rem;
+}
+footer ul {
   list-style: none;
 }
-
-blockquote, q {
-  quotes: none;
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+footer ul li svg {
+  width: 1rem;
+  margin-right: 0.5rem;
 }
 
-blockquote:before, blockquote:after {
-  content: "";
-  content: none;
+main {
+  position: relative;
+  z-index: 0;
+}
+main > div {
+  padding: 1.5rem 1.25rem 2.5rem 1.25rem;
 }
 
-q:before, q:after {
-  content: "";
-  content: none;
+.content {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.search {
+  width: 100%;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+}
+.search > *:not(label) {
+  margin: 0 2.25rem 1rem 2.25rem;
+  text-align: center;
+}
+.search > label {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3.125rem;
+  margin-bottom: 2.5rem;
+  background-color: #EAEAEA;
+}
+.search > label > svg {
+  width: 1rem;
+  height: 1rem;
+}
+.search > label > input {
+  width: min-content;
+  height: 3.125rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+}
+.search > label > input:focus {
+  outline: none;
+}
+.search > p {
+  margin-bottom: 1.5rem;
+}
+
+span.operation {
+  height: 4.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 0.625rem;
+  margin-bottom: 1.5rem;
+  border-radius: 1rem;
+  background-color: #F6F6F6;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 10px 0;
+  font-weight: bold;
+}
+span.operation .number {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-left: -0.625rem;
+  padding: 0.3125rem;
+  border-radius: 50%;
+  color: white;
+  background-color: #9356DC;
+  font-size: 0.625rem;
+  text-align: center;
+}
+span.operation svg {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #7E7E7E;
+}
+span.operation > * {
+  margin-right: 1.25rem;
+}
+span.operation:hover {
+  background-color: #f2eafb;
+}
+span.operation:hover svg {
+  color: #9356DC;
+}
+
+div#restaurant {
+  background-color: #F6F6F6;
+}
+
+html {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

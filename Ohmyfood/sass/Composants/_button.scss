@@ -1,0 +1,23 @@
+.btn {
+  height: 3.125rem;
+  padding: 0 1.375rem;
+
+  color: white;
+
+  border: none;
+  border-radius: 1.5625rem;
+  background-image: linear-gradient(175deg, $secondary 0%,  $primary 100%);
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0 5px 10px 0;
+  cursor: pointer;
+
+  &:hover {
+    background-image: linear-gradient(175deg, lighten($secondary, 5%) 0%,  lighten($primary, 5%) 100%);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 5px 10px 0;
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: inset rgb(0 0 0 / 25%) 0 5px 10px 0;
+  }
+}

@@ -1,3 +1,16 @@
 
-@import "Vendor/reset";
+@import "Utils/variable";
 
+//@import url("https://unpkg.com/browse/normalize.css@8.0.1/normalize.css");
+
+@import "Composants/button";
+@import "Composants/card";
+
+@import "Layout/header";
+@import "Layout/footer";
+
+@import "Pages/home";
+//#101010
+html {
+  font-size: 20px;
+}

@@ -1,0 +1,94 @@
+.card {
+  height: 16rem;
+  width: 100%;
+
+  margin-bottom: 1.25rem;
+  padding: 0;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: rgb(0 0 0 / 15%) 0 2px 10px 0;
+
+  text-decoration: none;
+  color: black;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .card-img {
+    position: relative;
+    z-index: 1;
+
+    height: calc( 100% - 4.75rem);
+    width: 100%;
+
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    object-fit: cover;
+  }
+
+  .card-content {
+    height: 4.75rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-between;
+
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: flex-start;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      padding: 1.25rem 0 1.25rem 1rem;
+    }
+
+    .card-like {
+    }
+  }
+
+  &.new::after {
+    position: absolute;
+    content: 'Nouveau';
+    z-index: 5;
+
+    width: fit-content;
+
+    top: 0.75rem;
+    right: 0.75rem;
+
+    padding: 0.5rem 0.75rem;
+
+    background-color: $tertiaire;
+    color: darken($tertiaire, 35%);
+    border-radius: 0.125rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 2px 5px 1px;
+
+    line-height: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+}
+
+.like {
+  width: 100px;
+  height: 100px;
+  background-color: #8cffa0;
+  -webkit-mask-image: url(https://mdn.mozillademos.org/files/12676/star.svg);
+  mask-image: url(https://mdn.mozillademos.org/files/12676/star.svg);
+}
