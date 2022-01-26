@@ -85,13 +85,35 @@
 }
 
 .like {
-  width: 100px;
-  height: 100px;
-  background-color: #8cffa0;
-  -webkit-mask-image: url(https://mdn.mozillademos.org/files/12676/star.svg);
-  mask-image: url(https://mdn.mozillademos.org/files/12676/star.svg);
+  width: 1em;
+  height: 1em;
+}
+.like svg {
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+}
+.like svg path {
+  stroke: black;
+  stroke-width: 1rem;
+}
+.like svg:hover path {
+  animation: 2.5s slidein linear forwards;
 }
 
+@keyframes slidein {
+  0% {
+    stroke-width: 1rem;
+    fill: linear-gradient(35deg, #FF79DA 0%, #9356DC 0%, rgba(0, 0, 0, 0) 0%);
+  }
+  50% {
+    fill: linear-gradient(35deg, #FF79DA 0%, #9356DC 50%, rgba(0, 0, 0, 0) 100%);
+  }
+  100% {
+    stroke-width: 0;
+    fill: linear-gradient(35deg, #FF79DA 0%, #9356DC 100%, rgba(0, 0, 0, 0) 100%);
+  }
+}
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: "Roboto", serif;
@@ -250,11 +272,33 @@ div#restaurant {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0;
+  background-color: #F6F6F6;
 }
 .menu img {
   width: 100%;
   height: 16rem;
   object-fit: cover;
+}
+.menu .title {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: -2.5rem;
+  padding: 2rem 1.5rem;
+  background-color: #F6F6F6;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+}
+.menu .title h1 {
+  margin: 0;
+  font-family: "Shrikhand", serif;
+  font-weight: 200;
+}
+.menu .title .like {
+  font-size: 2em;
 }
 
 /*# sourceMappingURL=style.css.map */
