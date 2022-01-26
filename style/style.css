@@ -300,5 +300,78 @@ div#restaurant {
 .menu .title .like {
   font-size: 2em;
 }
+.menu .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding-left: 1.25rem;
+}
+.menu .content h4, .menu .content h3 {
+  margin: 0;
+}
+.menu .content h3 {
+  position: relative;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.menu .content h3::after {
+  content: "";
+  position: absolute;
+  height: 0.2rem;
+  width: 3rem;
+  bottom: -0.25rem;
+  left: 0;
+  background-color: #99E2D0;
+}
+.menu .content ol {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.menu .content ol li {
+  width: 100%;
+}
+.menu .content .dishes {
+  width: calc(100% - 1rem);
+  margin-bottom: 2rem;
+}
+.menu .content .dishes .dishe {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 2px 5px 1px;
+}
+.menu .content .dishes .dishe h4 {
+  margin-bottom: 0.25rem;
+  text-overflow: ellipsis;
+}
+.menu .content .dishes .dishe .desc {
+  text-overflow: ellipsis;
+}
+.menu .content .dishes .dishe .price {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+.menu .content .dishes .dishe .price span {
+  width: 100%;
+}
 
 /*# sourceMappingURL=style.css.map */
