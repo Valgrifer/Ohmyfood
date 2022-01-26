@@ -342,6 +342,7 @@ div#restaurant {
   margin-bottom: 2rem;
 }
 .menu .content .dishes .dishe {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -354,13 +355,17 @@ div#restaurant {
   border-radius: 1rem;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0 2px 5px 1px;
+  cursor: pointer;
+  transition: padding-right 2s;
 }
 .menu .content .dishes .dishe h4 {
   margin-bottom: 0.25rem;
+  font-size: 1.1rem;
   text-overflow: ellipsis;
 }
 .menu .content .dishes .dishe .desc {
   text-overflow: ellipsis;
+  font-size: 0.95rem;
 }
 .menu .content .dishes .dishe .price {
   display: flex;
@@ -372,6 +377,24 @@ div#restaurant {
 }
 .menu .content .dishes .dishe .price span {
   width: 100%;
+}
+.menu .content .dishes .dishe:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #99E2D0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  transition: width 2s;
+}
+.menu .content .dishes .dishe:hover {
+  padding-right: 5rem;
+}
+.menu .content .dishes .dishe:hover:before {
+  width: 4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

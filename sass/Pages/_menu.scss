@@ -101,6 +101,7 @@
       margin-bottom: 2rem;
 
       .dishe {
+        position: relative;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -117,13 +118,17 @@
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.25) 0 2px 5px 1px;
 
+        cursor: pointer;
+
         h4 {
           margin-bottom: 0.25rem;
+          font-size: 1.1rem;
           text-overflow: ellipsis;
         }
 
         .desc {
           text-overflow: ellipsis;
+          font-size: 0.95rem;
         }
 
         .price {
@@ -137,6 +142,36 @@
 
           span {
             width: 100%;
+          }
+        }
+
+        $dish-transition-delay: 2s;
+
+        transition: padding-right $dish-transition-delay;
+
+        &:before {
+          content: '';
+          position: absolute;
+
+          width: 0;
+
+          top: 0;
+          right: 0;
+          bottom: 0;
+
+          background-color: $tertiaire;
+
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+
+          transition: width $dish-transition-delay;
+        }
+
+        &:hover {
+          padding-right: calc(1rem + 4rem);
+
+          &:before {
+            width: 4rem;
           }
         }
       }
