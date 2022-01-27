@@ -84,38 +84,3 @@
     font-weight: bold;
   }
 }
-
-.like {
-  width: 1em;
-  height: 1em;
-
-  svg {
-    width: 1em;
-    height: 1em;
-
-    cursor: pointer;
-
-    path {
-      stroke: black;
-      stroke-width: 1rem;
-    }
-
-    &:hover path {
-      animation: 2.5s slidein linear forwards;
-    }
-  }
-}
-
-@keyframes slidein {
-  0% {
-    stroke-width: 1rem;
-    fill: linear-gradient(35deg, $secondary 0%, $primary 0%, $transparent 0%);
-  }
-  50% {
-    fill: linear-gradient(35deg, $secondary 0%, $primary 50%, $transparent 100%);
-  }
-  100% {
-    stroke-width: 0;
-    fill: linear-gradient(35deg, $secondary 0%, $primary 100%, $transparent 100%);
-  }
-}
