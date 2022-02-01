@@ -119,6 +119,7 @@ span.operation {
   }
 
   &:hover {
+    transition: background-color .5s;
     background-color: lighten( $primary, 35% );
 
     svg {
