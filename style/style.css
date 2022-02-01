@@ -369,6 +369,11 @@ div#restaurant {
   width: calc(100% - 1rem);
   margin-bottom: 2rem;
 }
+.menu .content .dishes h3, .menu .content .dishes .dishe {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  animation: 0.5s spawning linear forwards;
+}
 .menu .content .dishes .dishe {
   position: relative;
   display: flex;
@@ -433,6 +438,17 @@ div#restaurant {
 .menu .purchase .btn {
   min-width: 50%;
   margin: 1rem 0 5rem 0;
+}
+
+@keyframes spawning {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

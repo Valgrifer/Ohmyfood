@@ -100,6 +100,13 @@
 
       margin-bottom: 2rem;
 
+      h3, .dishe {
+        opacity: 0;
+
+        transform: translateY(.5rem);
+        animation: .5s spawning linear forwards;
+      }
+
       .dishe {
         position: relative;
         display: flex;
@@ -189,5 +196,17 @@
       min-width: 50%;
       margin: 1rem 0 5rem 0;
     }
+  }
+}
+
+
+@keyframes spawning {
+  0% {
+    opacity: 0;
+    transform: translateY(.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
