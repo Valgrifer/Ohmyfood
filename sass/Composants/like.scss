@@ -1,6 +1,9 @@
+
 .like {
   width: 1em;
   height: 1em;
+
+  font-size: 2em;
 
   svg {
     width: 1em;
@@ -13,22 +16,76 @@
       stroke-width: 1rem;
     }
 
-    &:hover path {
-      animation: 2.5s slidein linear forwards;
+    defs #linearGradient {
+      stop {
+        stop-color: $transparent;
+      }
+    }
+
+    $like-animation-delay: 2s;
+
+    &:hover {
+      path {
+        animation: $like-animation-delay fillinPath linear forwards;
+      }
+      defs #linearGradient {
+        stop:nth-of-type(1) {
+          animation: $like-animation-delay fillinColor1 linear forwards;
+        }
+        stop:nth-of-type(2) {
+          animation: $like-animation-delay fillinColor2 linear forwards;
+        }
+        stop:nth-of-type(3) {
+          animation: $like-animation-delay fillinColor3 linear forwards;
+        }
+      }
     }
   }
 }
 
-@keyframes slidein {
+$like-animation-middle-color: mix($secondary, $primary);
+
+@keyframes fillinPath {
   0% {
     stroke-width: 1rem;
-    fill: linear-gradient(35deg, $secondary 0%, $primary 0%, $transparent 0%);
-  }
-  50% {
-    fill: linear-gradient(35deg, $secondary 0%, $primary 50%, $transparent 100%);
   }
   100% {
     stroke-width: 0;
-    fill: linear-gradient(35deg, $secondary 0%, $primary 100%, $transparent 100%);
+  }
+}
+
+@keyframes fillinColor1 {
+  0% {
+    stop-color: $transparent;
+  }
+  50% {
+    stop-color: $transparent;
+  }
+  100% {
+    stop-color: $primary;
+  }
+}
+
+@keyframes fillinColor2 {
+  0% {
+    stop-color: $transparent;
+  }
+  50% {
+    stop-color: $primary;
+  }
+  100% {
+    stop-color: $like-animation-middle-color;
+  }
+}
+
+@keyframes fillinColor3 {
+  0% {
+    stop-color: $transparent;
+  }
+  50% {
+    stop-color: $like-animation-middle-color;
+  }
+  100% {
+    stop-color: $secondary;
   }
 }
