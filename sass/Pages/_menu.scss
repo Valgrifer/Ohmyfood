@@ -177,4 +177,17 @@
       }
     }
   }
+
+  .purchase {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+
+    .btn {
+      min-width: 50%;
+      margin: 1rem 0 5rem 0;
+    }
+  }
 }
