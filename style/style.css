@@ -401,13 +401,9 @@ div#restaurant {
   background-color: #99E2D0;
 }
 .menu .content ol {
-  width: 100%;
   padding: 0;
   margin: 0;
   list-style-type: none;
-}
-.menu .content ol li {
-  width: 100%;
 }
 .menu .content .dishes {
   width: calc(100% - 1rem);
@@ -419,58 +415,66 @@ div#restaurant {
   animation: 0.5s spawning linear forwards;
 }
 .menu .content .dishes .dishe {
-  position: relative;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: space-between;
-  justify-content: space-between;
   align-items: stretch;
   width: 100%;
   margin-bottom: 1rem;
-  padding: 1rem;
   border-radius: 1rem;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0 2px 5px 1px;
+  overflow: hidden;
   cursor: pointer;
-  transition: padding-right 2s;
 }
-.menu .content .dishes .dishe h4 {
+.menu .content .dishes .dishe .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  transition: max-width 0.75s;
+}
+.menu .content .dishes .dishe .content h4 {
+  display: block;
   margin-bottom: 0.25rem;
   font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu .content .dishes .dishe .desc {
-  text-overflow: ellipsis;
+.menu .content .dishes .dishe .content .desc {
+  display: block;
   font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menu .content .dishes .dishe .price {
+.menu .content .dishes .dishe .content .price {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
   margin-right: 0.5rem;
   font-weight: bold;
+  transition: margin-right 0.75s;
 }
-.menu .content .dishes .dishe .price span {
+.menu .content .dishes .dishe .content .price span {
   width: 100%;
 }
-.menu .content .dishes .dishe:before {
-  content: "";
-  position: absolute;
+.menu .content .dishes .dishe .selector {
   width: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
   background-color: #99E2D0;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  transition: width 2s;
+  transition: width 0.75s;
 }
-.menu .content .dishes .dishe:hover {
-  padding-right: 5rem;
+.menu .content .dishes .dishe:hover .content {
+  max-width: calc(100% - 4rem);
 }
-.menu .content .dishes .dishe:hover:before {
+.menu .content .dishes .dishe:hover .price {
+  margin-right: 0.25rem;
+}
+.menu .content .dishes .dishe:hover .selector {
   width: 4rem;
 }
 .menu .purchase {

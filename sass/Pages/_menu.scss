@@ -40,10 +40,6 @@
       font-family: "Shrikhand", serif;
       font-weight: 200;
     }
-
-    .like {
-      font-size: 2em;
-    }
   }
 
   .content {
@@ -83,16 +79,10 @@
     }
 
     ol {
-      width: 100%;
-
       padding: 0;
       margin: 0;
 
       list-style-type: none;
-
-      li {
-        width: 100%;
-      }
     }
 
     .dishes {
@@ -108,77 +98,95 @@
       }
 
       .dishe {
-        position: relative;
+        $dish-transition-delay: .75s;
+
+
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: space-between;
-        justify-content: space-between;
         align-items: stretch;
 
         width: 100%;
 
         margin-bottom: 1rem;
-        padding: 1rem;
 
         border-radius: 1rem;
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.25) 0 2px 5px 1px;
 
+        overflow: hidden;
+
         cursor: pointer;
 
-        h4 {
-          margin-bottom: 0.25rem;
-          font-size: 1.1rem;
-          text-overflow: ellipsis;
-        }
 
-        .desc {
-          text-overflow: ellipsis;
-          font-size: 0.95rem;
-        }
-
-        .price {
+        .content {
           display: flex;
-          flex-direction: column;
-          flex-wrap: nowrap;
+          flex-direction: row;
           justify-content: space-between;
+          align-items: stretch;
 
-          margin-right: 0.5rem;
-          font-weight: bold;
+          width: 100%;
+          max-width: 100%;
 
-          span {
-            width: 100%;
+          padding: 1rem;
+
+          transition: max-width $dish-transition-delay;
+
+          h4 {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .desc {
+            display: block;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .price {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            margin-right: 0.5rem;
+            font-weight: bold;
+
+            transition: margin-right $dish-transition-delay;
+
+            span {
+              width: 100%;
+            }
           }
         }
 
-        $dish-transition-delay: 2s;
-
-        transition: padding-right $dish-transition-delay;
-
-        &:before {
-          content: '';
-          position: absolute;
-
+        .selector {
           width: 0;
 
-          top: 0;
-          right: 0;
-          bottom: 0;
-
           background-color: $tertiaire;
-
-          border-top-right-radius: 1rem;
-          border-bottom-right-radius: 1rem;
 
           transition: width $dish-transition-delay;
         }
 
-        &:hover {
-          padding-right: calc(1rem + 4rem);
+        &:hover
+        {
+          $selector-width: 4rem;
 
-          &:before {
-            width: 4rem;
+          .content {
+            max-width: calc(100% - $selector-width);
+          }
+
+          .price {
+            margin-right: 0.25rem;
+          }
+
+          .selector {
+            width: $selector-width;
           }
         }
       }

@@ -1,8 +1,12 @@
+
 <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 534 534">
-    <linearGradient id="linear-gradient" x2="0" y2="1">
-        <stop offset="var(---stop-1, 0%)" stop-color="#FF79DA" />
-        <stop offset="var(---stop-2, 0%)" stop-color="#9356DC" />
-        <stop offset="var(---stop-3, 0%)" stop-color="rgba(0,0,0,0)" />
-    </linearGradient>
-    <path fill="url(#linear-gradient)" d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3z"></path>
+    <defs>
+        <linearGradient id="linearGradient" x2="0" y2="1">
+            <stop offset="0%" />
+            <stop offset="50%" />
+            <stop offset="100%" />
+        </linearGradient>
+    </defs>
+    <path class="stroke" fill="transparent" d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3z"></path>
+    <path class="fill" fill="url(#linear-gradient)" d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3z"></path>
 </svg>
