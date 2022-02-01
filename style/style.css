@@ -396,5 +396,15 @@ div#restaurant {
 .menu .content .dishes .dishe:hover:before {
   width: 4rem;
 }
+.menu .purchase {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.menu .purchase .btn {
+  min-width: 50%;
+  margin: 1rem 0 5rem 0;
+}
 
 /*# sourceMappingURL=style.css.map */
