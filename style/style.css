@@ -97,68 +97,22 @@
   width: 1em;
   height: 1em;
   cursor: pointer;
+  overflow: visible;
 }
 .like svg path {
-  stroke: black;
   stroke-width: 1rem;
-}
-.like svg defs #linearGradient stop {
-  stop-color: rgba(0, 0, 0, 0);
+  stroke: black;
+  fill-opacity: 0;
+  fill: url(#linearGradient);
+  transform-origin: center;
+  transition: stroke-width 2s, fill-opacity 2s, transform 2s;
 }
 .like svg:hover path {
-  animation: 2s fillinPath linear forwards;
-}
-.like svg:hover defs #linearGradient stop:nth-of-type(1) {
-  animation: 2s fillinColor1 linear forwards;
-}
-.like svg:hover defs #linearGradient stop:nth-of-type(2) {
-  animation: 2s fillinColor2 linear forwards;
-}
-.like svg:hover defs #linearGradient stop:nth-of-type(3) {
-  animation: 2s fillinColor3 linear forwards;
+  stroke-width: 0;
+  fill-opacity: 1;
+  transform: rotate(360deg);
 }
 
-@keyframes fillinPath {
-  0% {
-    stroke-width: 1rem;
-  }
-  100% {
-    stroke-width: 0;
-  }
-}
-@keyframes fillinColor1 {
-  0% {
-    stop-color: rgba(0, 0, 0, 0);
-  }
-  50% {
-    stop-color: rgba(0, 0, 0, 0);
-  }
-  100% {
-    stop-color: #9356DC;
-  }
-}
-@keyframes fillinColor2 {
-  0% {
-    stop-color: rgba(0, 0, 0, 0);
-  }
-  50% {
-    stop-color: #9356DC;
-  }
-  100% {
-    stop-color: #c968db;
-  }
-}
-@keyframes fillinColor3 {
-  0% {
-    stop-color: rgba(0, 0, 0, 0);
-  }
-  50% {
-    stop-color: #c968db;
-  }
-  100% {
-    stop-color: #FF79DA;
-  }
-}
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: "Roboto", serif;
@@ -460,6 +414,9 @@ div#restaurant {
   padding: 1rem;
   transition: max-width 0.75s;
 }
+.menu .content .dishes .dishe .content .text {
+  width: 100%;
+}
 .menu .content .dishes .dishe .content h4 {
   display: block;
   margin-bottom: 0.25rem;
@@ -480,6 +437,7 @@ div#restaurant {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
+  width: 2rem;
   margin-right: 0.5rem;
   font-weight: bold;
   transition: margin-right 0.75s;
@@ -491,15 +449,93 @@ div#restaurant {
   width: 0;
   background-color: #99E2D0;
   transition: width 0.75s;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.menu .content .dishes .dishe .selector svg {
+  width: 50%;
+  height: 50%;
+}
+.menu .content .dishes .dishe .selector svg path {
+  fill: white;
 }
 .menu .content .dishes .dishe:hover .content {
   max-width: calc(100% - 4rem);
+}
+.menu .content .dishes .dishe:hover .content .text {
+  width: calc(100% - 2rem);
 }
 .menu .content .dishes .dishe:hover .price {
   margin-right: 0.25rem;
 }
 .menu .content .dishes .dishe:hover .selector {
   width: 4rem;
+}
+.menu .content .dishes .dishe:hover .selector svg {
+  transform: rotate(360deg);
+  transition: transform 0.75s;
+}
+.menu .content #animation1 {
+  animation-delay: 1100ms;
+}
+.menu .content #animation2 {
+  animation-delay: 1200ms;
+}
+.menu .content #animation3 {
+  animation-delay: 1300ms;
+}
+.menu .content #animation4 {
+  animation-delay: 1400ms;
+}
+.menu .content #animation5 {
+  animation-delay: 1500ms;
+}
+.menu .content #animation6 {
+  animation-delay: 1600ms;
+}
+.menu .content #animation7 {
+  animation-delay: 1700ms;
+}
+.menu .content #animation8 {
+  animation-delay: 1800ms;
+}
+.menu .content #animation9 {
+  animation-delay: 1900ms;
+}
+.menu .content #animation10 {
+  animation-delay: 2000ms;
+}
+.menu .content #animation11 {
+  animation-delay: 2100ms;
+}
+.menu .content #animation12 {
+  animation-delay: 2200ms;
+}
+.menu .content #animation13 {
+  animation-delay: 2300ms;
+}
+.menu .content #animation14 {
+  animation-delay: 2400ms;
+}
+.menu .content #animation15 {
+  animation-delay: 2500ms;
+}
+.menu .content #animation16 {
+  animation-delay: 2600ms;
+}
+.menu .content #animation17 {
+  animation-delay: 2700ms;
+}
+.menu .content #animation18 {
+  animation-delay: 2800ms;
+}
+.menu .content #animation19 {
+  animation-delay: 2900ms;
+}
+.menu .content #animation20 {
+  animation-delay: 3000ms;
 }
 .menu .purchase {
   display: flex;

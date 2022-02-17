@@ -97,6 +97,8 @@
         animation: .5s spawning linear forwards;
       }
 
+      $price-width: 2rem;
+
       .dishe {
         $dish-transition-delay: .75s;
 
@@ -131,6 +133,10 @@
 
           transition: max-width $dish-transition-delay;
 
+          .text {
+            width: 100%;
+          }
+
           h4 {
             display: block;
             margin-bottom: 0.25rem;
@@ -154,6 +160,8 @@
             flex-wrap: nowrap;
             justify-content: space-between;
 
+            width: $price-width;
+
             margin-right: 0.5rem;
             font-weight: bold;
 
@@ -171,6 +179,20 @@
           background-color: $tertiaire;
 
           transition: width $dish-transition-delay;
+
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            width: 50%;
+            height: 50%;
+
+            path {
+              fill: white;
+            }
+          }
         }
 
         &:hover
@@ -179,6 +201,10 @@
 
           .content {
             max-width: calc(100% - $selector-width);
+
+            .text {
+              width: calc(100% - $price-width);
+            }
           }
 
           .price {
@@ -187,8 +213,19 @@
 
           .selector {
             width: $selector-width;
+
+            svg {
+              transform: rotate(360deg);
+              transition: transform $dish-transition-delay;
+            }
           }
         }
+      }
+    }
+
+    @for $i from 1 through 20 {
+      #animation#{$i} {
+        animation-delay: 1000ms + (100ms * $i)
       }
     }
   }
