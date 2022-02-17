@@ -1,0 +1,37 @@
+
+.like {
+  width: 1em;
+  height: 1em;
+
+  font-size: 2em;
+
+  svg {
+    width: 1em;
+    height: 1em;
+
+    cursor: pointer;
+    overflow: visible;
+
+    $like-animation-delay: 2s;
+
+    path {
+      stroke-width: 1rem;
+      stroke: black;
+      fill-opacity: 0;
+      fill: url(#linearGradient);
+      transform-origin: center;
+
+      transition: stroke-width $like-animation-delay, fill-opacity $like-animation-delay, transform $like-animation-delay;
+    }
+
+    &:hover {
+      path {
+        stroke-width: 0;
+        fill-opacity: 1;
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+$like-animation-middle-color: mix($secondary, $primary);
