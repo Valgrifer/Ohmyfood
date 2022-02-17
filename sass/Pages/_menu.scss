@@ -173,6 +173,8 @@
           }
         }
 
+        $selector-width: 4rem;
+
         .selector {
           width: 0;
 
@@ -186,8 +188,8 @@
           align-items: center;
 
           svg {
-            width: 50%;
-            height: 50%;
+            width: $selector-width/2;
+            height: $selector-width/2;
 
             path {
               fill: white;
@@ -197,7 +199,6 @@
 
         &:hover
         {
-          $selector-width: 4rem;
 
           .content {
             max-width: calc(100% - $selector-width);
