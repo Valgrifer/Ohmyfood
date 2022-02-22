@@ -410,12 +410,11 @@ div#restaurant {
   justify-content: space-between;
   align-items: stretch;
   width: 100%;
-  max-width: 100%;
   padding: 1rem;
-  transition: max-width 0.75s;
+  transition: width 0.75s;
 }
 .menu .content .dishes .dishe .content .text {
-  width: 100%;
+  width: calc(100% - 3rem);
 }
 .menu .content .dishes .dishe .content h4 {
   display: block;
@@ -437,8 +436,9 @@ div#restaurant {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
-  width: 2rem;
-  margin-right: 0.5rem;
+  width: 3rem;
+  margin-right: 0.25rem;
+  padding-left: 1rem;
   font-weight: bold;
   transition: margin-right 0.75s;
 }
@@ -455,17 +455,14 @@ div#restaurant {
   align-items: center;
 }
 .menu .content .dishes .dishe .selector svg {
-  width: 50%;
-  height: 50%;
+  width: 2rem;
+  height: 2rem;
 }
 .menu .content .dishes .dishe .selector svg path {
   fill: white;
 }
 .menu .content .dishes .dishe:hover .content {
-  max-width: calc(100% - 4rem);
-}
-.menu .content .dishes .dishe:hover .content .text {
-  width: calc(100% - 2rem);
+  width: calc(100% - 4rem);
 }
 .menu .content .dishes .dishe:hover .price {
   margin-right: 0.25rem;

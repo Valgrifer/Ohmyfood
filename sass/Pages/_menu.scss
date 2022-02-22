@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -97,7 +99,6 @@
         animation: .5s spawning linear forwards;
       }
 
-      $price-width: 2rem;
 
       .dishe {
         $dish-transition-delay: .75s;
@@ -119,6 +120,8 @@
 
         cursor: pointer;
 
+        $price-width: 3rem;
+        $selector-width: 4rem;
 
         .content {
           display: flex;
@@ -127,14 +130,13 @@
           align-items: stretch;
 
           width: 100%;
-          max-width: 100%;
 
           padding: 1rem;
 
-          transition: max-width $dish-transition-delay;
+          transition: width $dish-transition-delay;
 
           .text {
-            width: 100%;
+            width: calc(100% - $price-width);
           }
 
           h4 {
@@ -162,7 +164,8 @@
 
             width: $price-width;
 
-            margin-right: 0.5rem;
+            margin-right: 0.25rem;
+            padding-left: 1rem;
             font-weight: bold;
 
             transition: margin-right $dish-transition-delay;
@@ -172,8 +175,6 @@
             }
           }
         }
-
-        $selector-width: 4rem;
 
         .selector {
           width: 0;
@@ -188,8 +189,8 @@
           align-items: center;
 
           svg {
-            width: $selector-width/2;
-            height: $selector-width/2;
+            width: math.div($selector-width, 2);
+            height: math.div($selector-width, 2);
 
             path {
               fill: white;
@@ -199,13 +200,9 @@
 
         &:hover
         {
-
-          .content {
-            max-width: calc(100% - $selector-width);
-
-            .text {
-              width: calc(100% - $price-width);
-            }
+          .content
+          {
+            width: calc(100% - $selector-width);
           }
 
           .price {
