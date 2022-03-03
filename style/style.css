@@ -120,7 +120,7 @@
 
 header {
   position: relative;
-  z-index: 1000;
+  z-index: -100;
   height: 4rem;
   width: 100%;
   padding: 1.375rem;
@@ -129,6 +129,7 @@ header {
   justify-content: space-between;
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.75) 0 -10px 20px 0;
+  animation: 0.5s showPart 2s linear forwards;
 }
 header svg {
   height: 1.875rem;
@@ -158,13 +159,36 @@ header .back:after {
   transform: rotate(45deg);
 }
 
+main {
+  position: relative;
+  z-index: 0;
+}
+
+@keyframes showPart {
+  99.9999% {
+    z-index: -100;
+  }
+  100% {
+    z-index: 100;
+  }
+}
 footer {
+  position: relative;
+  z-index: -100;
   padding: 1.25rem;
   background: #353535;
   color: white;
+  animation: 0.5s showPart 2s linear forwards;
 }
-footer > * {
-  margin: 0 0 1.25rem;
+footer a {
+  color: white;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer .container > * {
+  margin: 0 0 1.25rem 0;
   padding: 0;
 }
 footer svg {
@@ -298,13 +322,13 @@ div#restaurant ul {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #EAEAEA;
   opacity: 1;
-  animation: 0.5s hideLoader 5s linear forwards;
+  animation: 0.5s hideLoader 2s linear forwards;
 }
 
 @keyframes hideLoader {
@@ -383,7 +407,6 @@ div#restaurant ul {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  padding-left: 1.25rem;
 }
 .menu .content h4, .menu .content h3 {
   margin: 0;
