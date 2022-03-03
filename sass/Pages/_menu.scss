@@ -89,6 +89,7 @@
 
     .dishes {
       width: calc(100% - 1rem);
+      max-width: 25rem;
 
       margin-bottom: 2rem;
 
@@ -251,5 +252,17 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .menu>.content {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .dishes {
+      margin: 0 auto;
+    }
   }
 }

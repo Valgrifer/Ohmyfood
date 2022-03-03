@@ -249,6 +249,7 @@ span.operation {
   align-content: center;
   justify-content: flex-start;
   align-items: center;
+  max-width: 25rem;
   margin-left: 0.625rem;
   margin-bottom: 1.5rem;
   border-radius: 1rem;
@@ -286,6 +287,10 @@ span.operation:hover svg {
 div#restaurant {
   background-color: #F6F6F6;
 }
+div#restaurant ul {
+  display: flex;
+  flex-direction: column;
+}
 
 .loader {
   position: fixed;
@@ -315,6 +320,26 @@ div#restaurant {
     display: none;
     opacity: 0;
     z-index: -100;
+  }
+}
+@media (min-width: 768px) {
+  #operation .container {
+    max-width: 500px;
+  }
+}
+@media (min-width: 992px) {
+  div#restaurant ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  div#restaurant ul li {
+    width: 20rem;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  div#restaurant ul li {
+    width: 30rem;
   }
 }
 .menu {
@@ -385,6 +410,7 @@ div#restaurant {
 }
 .menu .content .dishes {
   width: calc(100% - 1rem);
+  max-width: 25rem;
   margin-bottom: 2rem;
 }
 .menu .content .dishes h3, .menu .content .dishes .dishe {
@@ -553,6 +579,34 @@ div#restaurant {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (min-width: 992px) {
+  .menu > .content {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .menu > .content .dishes {
+    margin: 0 auto;
+  }
+}
+.container {
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 800px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1000px;
   }
 }
 
