@@ -147,7 +147,7 @@ div#restaurant {
   bottom: 0;
   left: 0;
 
-  z-index: 100;
+  z-index: 200;
 
   display: flex;
   justify-content: center;
@@ -157,7 +157,7 @@ div#restaurant {
 
   opacity: 1;
 
-  animation: .5s hideLoader 5s linear forwards;
+  animation: $loader-duration hideLoader $loader-delay linear forwards;
 }
 
 

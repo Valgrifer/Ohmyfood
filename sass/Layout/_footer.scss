@@ -1,11 +1,25 @@
 footer {
+  position: relative;
+  z-index: -100;
+
   padding: 1.25rem;
 
   background: $gray-4;
   color: white;
 
-  &>* {
-    margin: 0 0 1.25rem;
+  animation: $loader-duration showPart $loader-delay linear forwards;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .container>* {
+    margin: 0 0 1.25rem 0;
     padding: 0;
   }
 
